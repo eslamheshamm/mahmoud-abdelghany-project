@@ -1,0 +1,23 @@
+@font-face {
+	font-family: "NeueLight";
+	font-style: normal;
+	font-weight: normal;
+	src: local("./fonts/NeueHaasDisplayLight.woff"),
+		url("./fonts//NeueHaasDisplayLight.woff") format("woff");
+}
+
+@font-face {
+	font-family: "NeueThin";
+	font-style: normal;
+	font-weight: normal;
+	src: local("./fonts/NeueHaasDisplayXXThin.woff"),
+		url("./fonts//NeueHaasDisplayXThin.woff") format("woff");
+}
+
+@font-face {
+	font-family: "NeueBold";
+	font-style: normal;
+	font-weight: normal;
+	src: local("./fonts/NeueHaasDisplayBold.woff"),
+		url("./fonts//NeueHaasDisplayBold.woff") format("woff");
+}

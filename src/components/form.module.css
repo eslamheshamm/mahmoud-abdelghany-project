@@ -1,0 +1,14 @@
+.Label {
+	padding: 1.5rem;
+	width: 100%;
+	display: flex;
+	justify-items: center;
+	margin-top: 1.5rem;
+	border-radius: 24px 24px 0px 24px;
+}
+.Input {
+	width: 100%;
+}
+.Input:focus {
+	outline: none;
+}
