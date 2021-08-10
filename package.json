@@ -9,12 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formspark/use-formspark": "^0.1.33",
+    "classnames": "^2.3.1",
+    "gsap": "^3.7.1",
+    "lottie-web": "^5.7.12",
     "next": "11.0.1",
+    "next-transpile-modules": "^8.0.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-hook-form": "^7.12.2"
   },
   "devDependencies": {
+    "autoprefixer": "^10.3.1",
     "eslint": "7.32.0",
-    "eslint-config-next": "11.0.1"
+    "eslint-config-next": "11.0.1",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.7"
   }
 }
