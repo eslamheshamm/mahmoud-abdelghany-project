@@ -10,9 +10,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import helloAnimation from "../hello-animation.json";
 export default function Home() {
 	const parent = useRef(null);
-	useEffect(() => {
-		smoothScroll(parent.current);
-	}, [parent]);
+	// useEffect(() => {
+	// 	smoothScroll(parent.current);
+	// }, [parent]);
 	const myRef = useRef(null);
 	gsap.registerPlugin(ScrollTrigger);
 	useEffect(() => {
@@ -28,7 +28,7 @@ export default function Home() {
 		ScrollTrigger.create({
 			trigger: myRef.current.querySelector(".pinContaine"),
 			pin: true,
-			scrub: 1,
+			scrub: true,
 			start: "top top",
 			end: "+=2000",
 			onUpdate: (self) => {

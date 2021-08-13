@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { useMediaQuery } from "react-responsive";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const ShapesSection = () => {
+	gsap.registerPlugin(ScrollTrigger);
 	const isMobile = useMediaQuery({ maxWidth: 767 });
 
 	const secDiv = useRef(null);
