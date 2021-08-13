@@ -33,14 +33,17 @@ const FormInputs = () => {
 		>
 			<label
 				htmlFor="email"
-				className={classNames(styles.Label, "font-NeueLight bg-gray-50")}
+				className={classNames(
+					styles.Label,
+					"font-NeueLight border-[#E94F38] border-4"
+				)}
 			>
 				<input
 					type="text"
 					id="email"
 					className={classNames(
 						styles.Input,
-						"w-full focus:outline-none  bg-gray-50"
+						"w-full focus:outline-none text-[#E94F38] placeholder-[#E94F38] placeholder-shown:font-NeueBold "
 					)}
 					placeholder="Email@example.com"
 					{...register("email", {
@@ -55,13 +58,13 @@ const FormInputs = () => {
 					viewBox="0 0 32 32"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
-					className="bg-gray-50"
+					className=""
 				>
 					<path
 						d="M10.2083 24.0989L11.3369 26.3561L21.6928 16.0002L11.3369 5.64428L10.2083 7.90147L17.9535 15.6466L18.307 16.0002L17.9535 16.3538L10.2083 24.0989Z"
-						fill="black"
-						fillOpacity="0.3"
-						stroke="white"
+						fill="#E94F38"
+						// fillOpacity="0.3"
+						stroke="#E94F38"
 					/>
 					<rect
 						x="-1"
@@ -69,7 +72,7 @@ const FormInputs = () => {
 						width="30"
 						height="30"
 						transform="matrix(0 -1 -1 0 30 30)"
-						stroke="white"
+						stroke="#E94F38"
 						strokeWidth="0"
 					/>
 				</svg>
