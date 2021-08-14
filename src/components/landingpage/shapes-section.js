@@ -6,41 +6,104 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 const ShapesSection = () => {
 	gsap.registerPlugin(ScrollTrigger);
 	const isMobile = useMediaQuery({ maxWidth: 767 });
-
 	const secDiv = useRef(null);
 	const firstShape = useRef(null);
 	const secodShape = useRef(null);
 	const thirdShape = useRef(null);
 
 	useEffect(() => {
+		isMobile &&
+			gsap.fromTo(
+				thirdShape.current,
+				{
+					y: "100%",
+				},
+				{
+					duration: 3,
+					y: "0%",
+					scrollTrigger: {
+						id: "shape-mobile",
+						trigger: secDiv.current,
+						start: "top center",
+						end: "10%",
+						toggleActions: "play none none reverse",
+						scrub: 1,
+						// markers: true,
+					},
+				}
+			);
 		{
-			isMobile &&
+			!isMobile &&
 				gsap.fromTo(
 					thirdShape.current,
 					{
-						y: "100%",
+						x: "100%",
 					},
 					{
 						duration: 3,
-						y: "0%",
-						ease: "power4.out",
-						scrub: true,
+						x: "0%",
 						scrollTrigger: {
+							id: "shape-3",
 							trigger: secDiv.current,
-							start: "top top",
-							end: "+=70%",
+							start: "top center",
+							end: "25%",
 							toggleActions: "play none none reverse",
-							scrub: true,
-							markers: true,
+							scrub: 1,
+							// markers: true,
 						},
 					}
 				);
 		}
-	}, [firstShape, secodShape, thirdShape, secDiv, isMobile]);
+		{
+			!isMobile &&
+				gsap.fromTo(
+					firstShape.current,
+					{
+						x: "-100%",
+					},
+					{
+						duration: 3,
+						x: "0%",
+						scrollTrigger: {
+							id: "shape-1",
+							trigger: secDiv.current,
+							start: "top center",
+							end: "+100",
+							toggleActions: "play none none reverse",
+							scrub: 1,
+							// markers: true,
+						},
+					}
+				);
+		}
+		{
+			!isMobile &&
+				gsap.fromTo(
+					thirdShape.current,
+					{
+						scale: "0.2",
+					},
+					{
+						duration: 3,
+						scale: "0.2",
+						ease: "power4.out",
+						scrollTrigger: {
+							id: "shape-1",
+							trigger: secDiv.current,
+							start: "top center",
+							end: "+100",
+							toggleActions: "play none none reverse",
+							scrub: 1,
+							// markers: true,
+						},
+					}
+				);
+		}
+	}, [isMobile]);
 
 	return (
-		<section className="min-h-screen relative" ref={secDiv}>
-			<h2 className=" text-center text-white leading-relaxed font-NeueBold text-4xl sm:text-4xl lg:text-7xl absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 w-11/12 mx-auto">
+		<section className="min-h-screen relative " ref={secDiv}>
+			<h2 className=" text-center text-white leading-relaxed font-NeueBold text-4xl  sm:text-4xl lg:text-7xl absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 w-11/12 mx-auto">
 				We take pride in exploring what <br /> Arabic letters are cabable of
 			</h2>
 			<div className="absolute mx-auto left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
