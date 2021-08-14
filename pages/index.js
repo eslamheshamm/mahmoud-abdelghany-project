@@ -43,7 +43,7 @@ export default function Home() {
 				});
 			},
 			onLeave: () => {
-				console.log("hi");
+				// console.log("hi");
 			},
 		});
 	}, []);
@@ -66,9 +66,9 @@ export default function Home() {
 					id: "instagram",
 					trigger: followMeRef.current,
 					start: "top center",
-					end: "+=30%",
+					end: "+=40%",
 					toggleActions: "play none none reverse",
-					scrub: 1,
+					scrub: true,
 					// markers: true,
 				},
 			}
@@ -85,9 +85,9 @@ export default function Home() {
 					id: "facebook",
 					trigger: followMeRef.current,
 					start: "top center",
-					end: "+=30%",
+					end: "+=40%",
 					toggleActions: "play none none reverse",
-					scrub: 1,
+					scrub: true,
 					// markers: true,
 				},
 			}
@@ -105,9 +105,9 @@ export default function Home() {
 					// markers: true,
 					trigger: followMeRef.current,
 					start: "top center",
-					end: "+=30%",
+					end: "+=40%",
 					toggleActions: "play none none reverse",
-					scrub: 1,
+					scrub: true,
 				},
 			}
 		);
@@ -134,9 +134,9 @@ export default function Home() {
 							id: "shape-mobile",
 							trigger: secDiv.current,
 							start: "top center",
-							end: "+=10%",
+							end: "+=40%",
 							toggleActions: "play none none reverse",
-							scrub: 1,
+							scrub: true,
 							// markers: true,
 						},
 					}
@@ -156,9 +156,9 @@ export default function Home() {
 							id: "shape-3",
 							trigger: secDiv.current,
 							start: "top center",
-							end: "+=25%",
+							end: "+=35%",
 							toggleActions: "play none none reverse",
-							scrub: 1,
+							scrub: true,
 							// markers: true,
 						},
 					}
@@ -178,9 +178,9 @@ export default function Home() {
 							id: "shape-1",
 							trigger: secDiv.current,
 							start: "top center",
-							end: "+=25%",
+							end: "+=35%",
 							toggleActions: "play none none reverse",
-							scrub: 1,
+							scrub: true,
 							// markers: true,
 						},
 					}
@@ -200,9 +200,9 @@ export default function Home() {
 							id: "shape-2",
 							trigger: secDiv.current,
 							start: "top center",
-							end: "+=25%",
+							end: "+=35%",
 							toggleActions: "play none none reverse",
-							scrub: 1,
+							scrub: true,
 							// markers: true,
 						},
 					}
@@ -224,16 +224,16 @@ export default function Home() {
 					id: "form",
 					trigger: formSectionRef.current,
 					start: "top center",
-					end: "+=30%",
+					end: "+=50%",
 					toggleActions: "play none none reverse",
-					scrub: 1,
+					scrub: true,
 					// markers: true,
 				},
 			}
 		);
 	}, []);
 	return (
-		<div ref={parent} className=" overflow-x-hidden">
+		<div className=" overflow-x-hidden" ref={parent}>
 			<Head>
 				<title>Hello Animation!</title>
 			</Head>
