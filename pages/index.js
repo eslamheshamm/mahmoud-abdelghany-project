@@ -31,7 +31,7 @@ export default function Home() {
 			pin: true,
 			scrub: true,
 			start: "top top",
-			end: "+=2000",
+			end: "+=1000",
 			onUpdate: (self) => {
 				gsap.to(timeObj, {
 					duration: duration,
@@ -224,7 +224,7 @@ export default function Home() {
 					id: "form",
 					trigger: formSectionRef.current,
 					start: "top center",
-					end: "+=50%",
+					end: "+=60%",
 					toggleActions: "play none none reverse",
 					scrub: true,
 					// markers: true,
@@ -285,10 +285,10 @@ export default function Home() {
 					</svg>
 				</span>
 			</h2>
-			<section className=" h-[2300px] sm:h-[2500px]">
-				<div ref={myRef}>
+			<section className=" h-[1300px] sm:h-[1500px] ">
+				<div ref={myRef} className="">
 					<div className="pinContaine ">
-						<div className="anim h-[300px] w-[300px] sm:w-[500px] sm:h-[500px] mx-auto"></div>
+						<div className="anim h-[300px] w-[300px] sm:w-[700px] sm:h-[700px] mx-auto my-auto"></div>
 					</div>
 				</div>
 			</section>
