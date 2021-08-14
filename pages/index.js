@@ -1,13 +1,12 @@
 import React, { useRef, useEffect } from "react";
 import Head from "next/head";
 import { useMediaQuery } from "react-responsive";
-
-import Form from "../src/components/form";
-import smoothScroll from "../src/components/smoothScrolling";
 import lottie from "lottie-web";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import smoothScroll from "../src/components/smoothScrolling";
 import helloAnimation from "../hello-animation.json";
+import FormInputs from "../src/components/form/form";
 export default function Home() {
 	gsap.registerPlugin(ScrollTrigger);
 	const parent = useRef(null);
@@ -67,7 +66,7 @@ export default function Home() {
 					id: "instagram",
 					trigger: followMeRef.current,
 					start: "top center",
-					end: "+=15%",
+					end: "+=30%",
 					toggleActions: "play none none reverse",
 					scrub: 1,
 					// markers: true,
@@ -86,7 +85,7 @@ export default function Home() {
 					id: "facebook",
 					trigger: followMeRef.current,
 					start: "top center",
-					end: "+=15%",
+					end: "+=30%",
 					toggleActions: "play none none reverse",
 					scrub: 1,
 					// markers: true,
@@ -106,7 +105,7 @@ export default function Home() {
 					// markers: true,
 					trigger: followMeRef.current,
 					start: "top center",
-					end: "+=15%",
+					end: "+=30%",
 					toggleActions: "play none none reverse",
 					scrub: 1,
 				},
@@ -210,7 +209,29 @@ export default function Home() {
 				);
 		}
 	}, [isMobile, firstShape, secodShape, thirdShape, secDiv]);
-
+	const formRef = useRef(null);
+	const formSectionRef = useRef(null);
+	useEffect(() => {
+		gsap.fromTo(
+			formRef.current,
+			{
+				y: "50%",
+			},
+			{
+				duration: 3,
+				y: "0%",
+				scrollTrigger: {
+					id: "form",
+					trigger: formSectionRef.current,
+					start: "top center",
+					end: "+=30%",
+					toggleActions: "play none none reverse",
+					scrub: 1,
+					// markers: true,
+				},
+			}
+		);
+	}, []);
 	return (
 		<div ref={parent} className=" overflow-x-hidden">
 			<Head>
@@ -247,7 +268,7 @@ export default function Home() {
 					</svg>
 				</div>
 			</div>
-			<h2 className="text-center text-2xl uppercase font-NeueLight opacity-50 flex flex-col items-center justify-center">
+			<h2 className="text-center text-2xl uppercase font-NeueLight opacity-50 flex flex-col items-center justify-center animate-bounce">
 				scroll down
 				<span className="mt-4">
 					<svg
@@ -344,7 +365,24 @@ export default function Home() {
 					</article>
 				</div>
 			</section>
-			<Form />
+			{/* <Form /> */}
+			<section className="min-h-screen relative" ref={formSectionRef}>
+				<article
+					className="flex flex-col  absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-9/12 mx-auto"
+					ref={formRef}
+				>
+					<h1 className="font-NeueBold font-bold text-3xl sm:text-4xl md:text-5xl lg:text-7xl mb-10">
+						We’re still building this website!
+					</h1>
+					<h2 className="font-NeueThin text-3xl sm:text-4xl md:text-5xl mb-16">
+						Be the first to hear about.
+					</h2>
+					<div>
+						<FormInputs />
+					</div>
+				</article>{" "}
+			</section>
+
 			{/* <FollowMeSection /> */}
 			<section className="min-h-screen overflow-hidden" ref={followMeRef}>
 				<h2 className="uppercase font-NeueLight text-2xl text-center  py-16">
