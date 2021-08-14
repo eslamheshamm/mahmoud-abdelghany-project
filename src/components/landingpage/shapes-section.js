@@ -100,7 +100,7 @@ const ShapesSection = () => {
 					}
 				);
 		}
-	}, [isMobile]);
+	}, [isMobile, firstShape, secodShape, thirdShape, secDiv]);
 
 	return (
 		<section className="min-h-screen relative " ref={secDiv}>

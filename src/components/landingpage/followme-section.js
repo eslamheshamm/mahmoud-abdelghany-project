@@ -67,7 +67,7 @@ const FollowMeSection = () => {
 				},
 			}
 		);
-	}, []);
+	}, [followMeRef, behanceRef, instaRef, facebookRef]);
 
 	return (
 		<section className="min-h-screen overflow-hidden" ref={followMeRef}>
