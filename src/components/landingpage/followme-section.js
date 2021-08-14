@@ -70,7 +70,7 @@ const FollowMeSection = () => {
 	}, [followMeRef, behanceRef, instaRef, facebookRef]);
 
 	return (
-		<section className="min-h-screen overflow-hidden" ref={followMeRef}>
+		<section className="min-h-screen overflow-x-hidden" ref={followMeRef}>
 			<h2 className="uppercase font-NeueLight text-2xl text-center  py-16">
 				FOLLOW ME
 			</h2>
