@@ -10,34 +10,36 @@ const ShapesSection = () => {
 	const firstShape = useRef(null);
 	const secodShape = useRef(null);
 	const thirdShape = useRef(null);
-
+	const mobileShape = useRef(null);
 	useEffect(() => {
-		isMobile &&
-			gsap.fromTo(
-				thirdShape.current,
-				{
-					y: "100%",
-				},
-				{
-					duration: 3,
-					y: "0%",
-					scrollTrigger: {
-						id: "shape-mobile",
-						trigger: secDiv.current,
-						start: "top center",
-						end: "10%",
-						toggleActions: "play none none reverse",
-						scrub: 1,
-						// markers: true,
+		{
+			isMobile &&
+				gsap.fromTo(
+					mobileShape.current,
+					{
+						y: "100%",
 					},
-				}
-			);
+					{
+						duration: 3,
+						y: "0%",
+						scrollTrigger: {
+							id: "shape-mobile",
+							trigger: secDiv.current,
+							start: "top center",
+							end: "10%",
+							toggleActions: "play none none reverse",
+							scrub: 1,
+							// markers: true,
+						},
+					}
+				);
+		}
 		{
 			!isMobile &&
 				gsap.fromTo(
 					thirdShape.current,
 					{
-						x: "100%",
+						x: "110%",
 					},
 					{
 						duration: 3,
@@ -46,7 +48,7 @@ const ShapesSection = () => {
 							id: "shape-3",
 							trigger: secDiv.current,
 							start: "top center",
-							end: "25%",
+							end: "+=25%",
 							toggleActions: "play none none reverse",
 							scrub: 1,
 							// markers: true,
@@ -59,7 +61,7 @@ const ShapesSection = () => {
 				gsap.fromTo(
 					firstShape.current,
 					{
-						x: "-100%",
+						x: "-110%",
 					},
 					{
 						duration: 3,
@@ -68,7 +70,7 @@ const ShapesSection = () => {
 							id: "shape-1",
 							trigger: secDiv.current,
 							start: "top center",
-							end: "+100",
+							end: "+=25%",
 							toggleActions: "play none none reverse",
 							scrub: 1,
 							// markers: true,
@@ -79,22 +81,21 @@ const ShapesSection = () => {
 		{
 			!isMobile &&
 				gsap.fromTo(
-					thirdShape.current,
+					secodShape.current,
 					{
-						scale: "0.2",
+						scale: "0",
 					},
 					{
 						duration: 3,
-						scale: "0.2",
-						ease: "power4.out",
+						scale: "1",
 						scrollTrigger: {
-							id: "shape-1",
+							id: "shape-2",
 							trigger: secDiv.current,
 							start: "top center",
-							end: "+100",
+							end: "+=25%",
 							toggleActions: "play none none reverse",
 							scrub: 1,
-							// markers: true,
+							markers: true,
 						},
 					}
 				);
@@ -103,7 +104,7 @@ const ShapesSection = () => {
 
 	return (
 		<section className="min-h-screen relative " ref={secDiv}>
-			<h2 className=" text-center text-white leading-relaxed font-NeueBold text-4xl  sm:text-4xl lg:text-7xl absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 w-11/12 mx-auto">
+			<h2 className=" text-center text-white leading-relaxed font-NeueBold text-4xl  sm:text-4xl lg:text-5xl xl:text-7xl absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 w-11/12 mx-auto">
 				We take pride in exploring what <br /> Arabic letters are cabable of
 			</h2>
 			<div className="absolute mx-auto left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
@@ -138,9 +139,24 @@ const ShapesSection = () => {
 							/>
 						</svg>
 					</div>
+					<div ref={thirdShape} className=" hidden md:block">
+						<svg
+							width="574"
+							height="582"
+							viewBox="0 0 574 582"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							className="relative  w-full h-full place-self-center justify-self-center  transform scale-x-110"
+						>
+							<path
+								d="M287 0C445.382 0 574 130.411 574 291V582H287C128.619 582 0 451.589 0 291C0 130.411 128.619 0 287 0Z"
+								fill="#E94F38"
+							/>
+						</svg>
+					</div>
 					<div
-						ref={thirdShape}
-						className=" transform md:transform-none rotate-90 scale-150 md:rotate-0 md:scale-0"
+						ref={mobileShape}
+						className=" transform md:hidden md:transform-none rotate-90 scale-150 md:rotate-0 md:scale-0"
 					>
 						<svg
 							width="574"
