@@ -215,11 +215,13 @@ export default function Home() {
 		gsap.fromTo(
 			formRef.current,
 			{
-				y: "50%",
+				y: "30%",
+				autoAlpha: 0,
 			},
 			{
 				duration: 3,
 				y: "0%",
+				autoAlpha: 1,
 				scrollTrigger: {
 					id: "form",
 					trigger: formSectionRef.current,
