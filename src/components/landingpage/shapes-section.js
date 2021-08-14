@@ -95,7 +95,7 @@ const ShapesSection = () => {
 							end: "+=25%",
 							toggleActions: "play none none reverse",
 							scrub: 1,
-							markers: true,
+							// markers: true,
 						},
 					}
 				);
