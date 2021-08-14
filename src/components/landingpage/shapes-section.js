@@ -26,7 +26,7 @@ const ShapesSection = () => {
 							id: "shape-mobile",
 							trigger: secDiv.current,
 							start: "top center",
-							end: "10%",
+							end: "+=10%",
 							toggleActions: "play none none reverse",
 							scrub: 1,
 							// markers: true,
