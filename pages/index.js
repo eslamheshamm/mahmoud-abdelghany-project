@@ -10,13 +10,14 @@ import FormInputs from "../src/components/form/form";
 export default function Home() {
 	gsap.registerPlugin(ScrollTrigger);
 	const parent = useRef(null);
-	const myRef = useRef(null);
+	const helloRef = useRef(null);
+	const helloContainer = useRef(null);
 	useEffect(() => {
 		smoothScroll(parent.current);
 	}, [parent]);
 	useEffect(() => {
 		let anim = lottie.loadAnimation({
-			container: myRef.current.querySelector(".anim"),
+			container: helloRef.current,
 			animationData: helloAnimation,
 			renderer: "svg",
 			loop: false,
@@ -27,7 +28,7 @@ export default function Home() {
 		ScrollTrigger.create({
 			id: "hello",
 			// markers: true,
-			trigger: myRef.current.querySelector(".pinContaine"),
+			trigger: helloContainer.current,
 			pin: true,
 			scrub: true,
 			start: "top top",
@@ -288,11 +289,12 @@ export default function Home() {
 				</span>
 			</h2>
 			<section className=" h-[1300px] sm:h-[1500px] ">
-				<div ref={myRef} className="">
-					<div className="pinContaine ">
-						<div className="anim h-[300px] w-[300px] sm:w-[700px] sm:h-[700px] mx-auto my-auto"></div>
-					</div>
-				</div>
+				<article ref={helloContainer}>
+					<div
+						className="anim h-[300px] w-[300px] sm:w-[700px] sm:h-[700px] mx-auto my-auto"
+						ref={helloRef}
+					></div>
+				</article>
 			</section>
 			{/* <ShapesSection /> */}
 			<section className="min-h-screen relative " ref={secDiv}>
